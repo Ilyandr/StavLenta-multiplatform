@@ -1,5 +1,5 @@
 plugins {
-    val kotlinVersion = "1.7.10"
+    val kotlinVersion = "1.7.20"
     val gradleVersion = "7.3.1"
     val dependenciesInjectionVersion = "1.0.2"
 
@@ -17,7 +17,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        val kotlinVersion = "1.7.10"
+        val kotlinVersion = "1.7.20"
 
         classpath(kotlin("serialization", version = kotlinVersion))
     }
