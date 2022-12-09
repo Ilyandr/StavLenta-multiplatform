@@ -1,11 +1,9 @@
 plugins {
     val kotlinVersion = "1.7.20"
     val gradleVersion = "7.3.1"
-    val dependenciesInjectionVersion = "1.0.2"
 
     id("com.android.application").version(gradleVersion).apply(false)
     id("com.android.library").version(gradleVersion).apply(false)
-    id("io.github.sergeshustoff.dikt").version(dependenciesInjectionVersion).apply(false)
     kotlin("android").version(kotlinVersion).apply(false)
     kotlin("multiplatform").version(kotlinVersion).apply(false)
 }

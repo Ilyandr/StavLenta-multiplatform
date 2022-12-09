@@ -28,6 +28,7 @@ kotlin {
         val coroutinesCoreVersion = "1.6.4"
         val serializationCoreVersion = "1.1.0"
         val base64Version = "1.0.6"
+        val kodeinDI = "7.1.0"
 
         // Feature dependencies
         val iosX64Main by getting
@@ -40,6 +41,9 @@ kotlin {
                 //Core
                 api("org.jetbrains.kotlinx:kotlinx-serialization-core:$serializationCoreVersion")
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesCoreVersion")
+
+                // DI
+                implementation("org.kodein.di:kodein-di:$kodeinDI")
 
                 // Rest
                 implementation("io.ktor:ktor-client-core:$ktorVersion")
