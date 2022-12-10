@@ -8,19 +8,6 @@ plugins {
     kotlin("multiplatform").version(kotlinVersion).apply(false)
 }
 
-buildscript {
-    repositories {
-        gradlePluginPortal()
-        google()
-        mavenCentral()
-    }
-    dependencies {
-        val kotlinVersion = "1.7.20"
-
-        classpath(kotlin("serialization", version = kotlinVersion))
-    }
-}
-
 tasks.register("clean", Delete::class) {
     delete(rootProject.buildDir)
 }

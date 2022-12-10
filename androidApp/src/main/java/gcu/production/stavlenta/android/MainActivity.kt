@@ -1,7 +1,7 @@
 package gcu.production.stavlenta.android
 
 import android.os.Bundle
-import android.util.Log
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
@@ -10,7 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import gcu.production.stavlenta.repository.di.CommonSDK
-import gcu.production.stavlenta.repository.di.module.repositories
+import gcu.production.stavlenta.repository.feature.other.completableRequest
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -32,9 +32,13 @@ class MainActivity : ComponentActivity() {
 
         CoroutineScope(Dispatchers.Main).launch {
            withContext(Dispatchers.IO) {
-               CommonSDK.repositories.restAuthRepository.login("doc77777@gmail.com", "28892")
+               CommonSDK.restAuthRepository.login("doc77776@gmail.com", "288923").completableRequest({
+                   Toast.makeText(this@MainActivity, "Opana, all good: 200", Toast.LENGTH_LONG).show()
+               }, { code ->
+                   Toast.makeText(this@MainActivity, "Opana, error: $code", Toast.LENGTH_LONG).show()
+               })
            }.apply {
-               Log.e("HTTP", this)
+          //     Log.e("HTTP", this)
            }
         }
     }

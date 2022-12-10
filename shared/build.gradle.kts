@@ -26,7 +26,6 @@ kotlin {
         // Versions
         val ktorVersion = "2.2.1"
         val coroutinesCoreVersion = "1.6.4"
-        val serializationCoreVersion = "1.1.0"
         val base64Version = "1.0.6"
         val kodeinDI = "7.1.0"
 
@@ -39,19 +38,19 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 //Core
-                api("org.jetbrains.kotlinx:kotlinx-serialization-core:$serializationCoreVersion")
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesCoreVersion")
 
                 // DI
                 implementation("org.kodein.di:kodein-di:$kodeinDI")
 
                 // Rest
-                implementation("io.ktor:ktor-client-core:$ktorVersion")
                 implementation("io.ktor:ktor-client-core:${ktorVersion}")
-                implementation("io.ktor:ktor-client-json:${ktorVersion}")
-                implementation("io.ktor:ktor-client-serialization:${ktorVersion}")
                 implementation("io.ktor:ktor-client-logging:$ktorVersion")
+                implementation("io.ktor:ktor-client-auth:$ktorVersion")
                 implementation("de.peilicke.sascha:kase64:$base64Version")
+
+                // Serialization
+                implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
             }
         }
 
