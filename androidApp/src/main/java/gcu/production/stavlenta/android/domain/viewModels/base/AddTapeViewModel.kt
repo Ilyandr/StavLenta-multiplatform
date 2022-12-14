@@ -48,11 +48,17 @@ internal class AddTapeViewModel @Inject constructor() : FlowableViewModel<AddTap
         }
 
         CoroutineScope(Dispatchers.IO).launch {
-            contentSource.addContent(body = AddTapeEntity(name = model.name, body = model.body),
+            contentSource.addContent(body = AddTapeEntity(
+                name = model.name,
+                body = model.body,
+                type = model.type,
+                sourceUrl = model.sourceUrl
+            ),
                 content = mutableListOf<ByteArray>().apply {
                     files.forEach { singleFile -> add(singleFile.readBytes()) }
                 }
             ).apply {
+                files.forEach { singleFile -> singleFile.deleteRecursively() }
                 mutableStateFlow.set(
                     if (status.isSuccess()) AddTapeModel.SuccessState else AddTapeModel.FaultGlobalState(
                         R.string.error_add_tape

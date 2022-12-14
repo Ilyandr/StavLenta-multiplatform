@@ -47,9 +47,13 @@ import gcu.production.stavlenta.android.presentation.views.other.CustomEditText
 import gcu.production.stavlenta.android.repository.features.utils.PhotoHelper.compressGetImageFilePath
 import gcu.production.stavlenta.android.repository.features.utils.extractBitmap
 import gcu.production.stavlenta.android.R
+import gcu.production.stavlenta.android.repository.source.Constants
 import gcu.production.stavlenta.repository.model.AddTapeEntity
+import gcu.production.stavlenta.repository.model.ContentType
 import ru.alexgladkov.odyssey.compose.RootController
+import ru.alexgladkov.odyssey.compose.extensions.push
 import ru.alexgladkov.odyssey.compose.local.LocalRootController
+import ru.alexgladkov.odyssey.core.LaunchFlag
 import java.io.File
 
 
@@ -82,7 +86,7 @@ internal fun AddTapeScreen(
         }
         is AddTapeModel.SuccessState -> {
             loadingState.value = false
-            rootController.popBackStack()
+            rootController.push(Constants.HOME_DESTINATION, launchFlag = LaunchFlag.SingleNewTask)
             viewModel.actionReady()
         }
         is AddTapeModel.FaultLocaleState -> {
@@ -110,6 +114,8 @@ internal fun AddTapeScreen(
                     AddTapeEntity(
                         name = headerText,
                         body = descriptionText,
+                        sourceUrl = "https://google.com/",
+                        type = ContentType.EVENT.name
                     ),
                     mutableListOf<File>().apply {
                         uriList.forEach { singleUri ->

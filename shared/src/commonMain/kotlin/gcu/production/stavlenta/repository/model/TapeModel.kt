@@ -1,5 +1,6 @@
 package gcu.production.stavlenta.repository.model
 
+import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 // Объявление класса-сущности с возможностью сериализации / десереализации в json. (для rest взаимодействия).
@@ -16,10 +17,10 @@ data class TapeModel(
 
 @Serializable
 data class AddTapeEntity(
-    val name: String,
-    val body: String,
-    val sourceUrl: String = "https://google.com/",
-    val type: ContentType = ContentType.EVENT,
+    @SerialName("name") val name: String,
+    @SerialName("body") val body: String,
+    @SerialName("sourceUrl") val sourceUrl: String,
+    @SerialName("type") val type: String,
 )
 
 enum class ContentType {

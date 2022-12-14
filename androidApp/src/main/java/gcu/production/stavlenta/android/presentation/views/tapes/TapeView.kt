@@ -106,14 +106,14 @@ internal fun BaseTapesListView(tapesList: Flow<PagingData<TapeModel>>, imageRequ
                 )
             }
         }
-        if (emptyState.value && isNetworkAvailable) {
+        else if (emptyState.value && isNetworkAvailable) {
             EmptyView(
                 primaryColor = R.color.light_gray,
                 iconId = R.drawable.ic_empty,
                 textId = R.string.empty_list
             )
         }
-        if (errorState.value || !isNetworkAvailable) {
+        else if (errorState.value || !isNetworkAvailable) {
             tapesListItems.retry()
             EmptyView(
                 primaryColor = R.color.error_color,
