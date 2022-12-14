@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">RuTape</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="registration"><u>Зарегистрироваться</u></string>
+    <string name="log_in">Вход</string>
+    <string name="mail">Почта</string>
+    <string name="name">Ваше имя</string>
+    <string name="password">Пароль</string>
+    <string name="auth_title">Авторизация</string>
+    <string name="home_title">Новости</string>
+    <string name="registration_title">Регистрация</string>
+    <string name="authError">Во время авторизации произошла ошибка</string>
+    <string name="incorrectDataError">Введён неправильный логин или пароль</string>
+    <string name="dialog_next">Далее</string>
+    <string name="dialog_back">Назад</string>
+
+    <string name="dialog_error_auth_title">У-упс..</string>
+    <string name="empty_list">Список ленты пока-что пуст, но вы можете создать первую запись по кнопке ниже</string>
+    <string name="error_list">При загрузке ленты что-то пошло не так.. Обновите список</string>
+    <string name="error_add_tape">При создании записи что-то пошло не так</string>
+
+    <string name="add_tape_header">Заголовок</string>
+    <string name="add_tape_description">Описание</string>
+    <string name="add_tape_photo">Добавить фото</string>
+    <string name="headerInputError">Поле с заголовком не может быть пустым</string>
+    <string name="title_add_tape">Новая запись</string>
+</resources>

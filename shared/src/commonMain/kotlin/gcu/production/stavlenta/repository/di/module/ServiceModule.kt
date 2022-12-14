@@ -8,7 +8,7 @@ import org.kodein.di.DI
 import org.kodein.di.bind
 import org.kodein.di.singleton
 
-
+// Реализация модуля di. (serviceModule - инициализация source by dataSource, локальное взаимодействие).
 val serviceModule = DI.Module(name = SERVICE_MODULE, init = {
 
     bind<StorageSource>() with singleton { StorageDataSource() }

@@ -14,7 +14,7 @@ import org.kodein.di.bind
 import org.kodein.di.instance
 import org.kodein.di.singleton
 
-
+// Реализация модуля di. (restModule - инициализация source by dataSource).
 internal val restModule = DI.Module(name = REST_MODULE, init = {
 
     bind<AuthSource>() with singleton {

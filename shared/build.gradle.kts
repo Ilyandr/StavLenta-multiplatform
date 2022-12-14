@@ -1,6 +1,8 @@
+// Инициализация зависимостей на уровне общей (ios / android) части.
 plugins {
     kotlin("multiplatform")
     kotlin("native.cocoapods")
+    kotlin("plugin.serialization")
     id("com.android.library")
 }
 
@@ -10,6 +12,7 @@ kotlin {
     iosArm64()
     iosSimulatorArm64()
 
+    // Инициализация системы сборки для ios.
     cocoapods {
         summary = "Some description for the Shared Module"
         homepage = "Link to the Shared Module homepage"
@@ -21,6 +24,7 @@ kotlin {
         }
     }
 
+    // Инициализация зависимостей.
     sourceSets {
 
         // Versions
@@ -34,26 +38,28 @@ kotlin {
         val iosArm64Main by getting
         val iosSimulatorArm64Main by getting
 
-        // Base dependencies
+        // Оющие зависимости.
         val commonMain by getting {
             dependencies {
-                //Core
+                // Ядро.
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesCoreVersion")
 
-                // DI
+                // Инъекция зависимостей.
                 implementation("org.kodein.di:kodein-di:$kodeinDI")
 
-                // Rest
+                // Rest взаимодействие.
                 implementation("io.ktor:ktor-client-core:${ktorVersion}")
                 implementation("io.ktor:ktor-client-logging:$ktorVersion")
                 implementation("io.ktor:ktor-client-auth:$ktorVersion")
                 implementation("de.peilicke.sascha:kase64:$base64Version")
 
-                // Serialization
+                // Обработка данных.
+                api("org.jetbrains.kotlinx:kotlinx-serialization-core:1.4.1")
                 implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
             }
         }
 
+        // Нативные зависимости.
         val androidMain by getting {
             dependencies {
                 // Rest

@@ -1,0 +1,31 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <item name="actionBarTheme">@style/ActionBar</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@color/primary</item>
+        <item name="colorAccent">@color/white</item>
+        <item name="colorPrimaryDark">@color/primary</item>
+        <item name="colorOnSurface">@color/white</item>
+        <item name="colorPrimary">@color/primary</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="ActionBar" parent="Theme.AppCompat.Light">
+    </style>
+
+    <style name="BasicLayoutTextStyle" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="android:textColor">@color/primary</item>
+        <item name="boxStrokeColor">@color/primary</item>
+        <item name="hintTextColor">@color/gray</item>
+        <item name="android:textColorHint">@color/gray</item>
+        <item name="endIconTint">@color/gray</item>
+        <item name="android:selectAllOnFocus">true</item>
+        <item name="startIconTint">@color/primary</item>
+        <item name="boxCornerRadiusBottomEnd">16dp</item>
+        <item name="boxCornerRadiusBottomStart">16dp</item>
+        <item name="boxCornerRadiusTopEnd">16dp</item>
+        <item name="boxCornerRadiusTopStart">16dp</item>
+    </style>
+</resources>

@@ -3,7 +3,8 @@ package gcu.production.stavlenta.repository.feature.other
 
 // API
 internal const val API_HOST = "78.40.217.59:8888"
-internal const val BASE_IMAGE_URL = "${API_HOST}api/getImage/?fileName="
+const val API_IMAGE_HOST = "http://$API_HOST/api/getImage/?fileName="
+const val SCREEN_IMAGE_URL = "https://gifgive.com/wp-content/uploads/2021/12/gorod-s-anime.gif"
 
 // DI
 internal const val KTOR_MODULE = "ktorModule"

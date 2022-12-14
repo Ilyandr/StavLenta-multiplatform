@@ -1,3 +1,4 @@
+// Основные настройки системы сборки (gradle) на уровне проекта.
 pluginManagement {
     repositories {
         google()

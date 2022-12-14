@@ -1,6 +1,6 @@
 package gcu.production.stavlenta.repository.feature.storage
 
-
+// Нативная реализация для хранения / записи данных в формате ключ-значение. (Не является аналогом базы данных).
 expect class StorageDataSource constructor(): StorageSource {
 
     override fun getString(key: String): String?
