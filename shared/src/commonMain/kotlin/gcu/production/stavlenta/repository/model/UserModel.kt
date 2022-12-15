@@ -3,6 +3,7 @@ package gcu.production.stavlenta.repository.model
 import kotlinx.serialization.SerialName
 
 
+@kotlinx.serialization.Serializable
 data class UserModel(
     @SerialName(value = "id")
     val id: Long? = null,

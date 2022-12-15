@@ -3,7 +3,7 @@ package gcu.production.stavlenta.repository.rest.repository
 import gcu.production.stavlenta.repository.model.UserModel
 import gcu.production.stavlenta.repository.rest.source.AuthSource
 import kotlinx.coroutines.*
-import kotlin.coroutines.coroutineContext
+
 
 // Общедоступный репозиторий для взаимодействия с api (инициализация с помощью di).
 class AuthRepository(private val source: AuthSource) {
